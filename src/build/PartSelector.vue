@@ -9,13 +9,13 @@
 
 <script>
 function getPreviousValidIndex(index, length) {
-  const deprecatedIndex = index - 1;
-  return deprecatedIndex < 0 ? length - 1 : deprecatedIndex;
+  const deprecatedIndex = index - 1
+  return deprecatedIndex < 0 ? length - 1 : deprecatedIndex
 }
 
 function getNextValidIndex(index, length) {
-  const incrementedIndex = index + 1;
-  return incrementedIndex > length - 1 ? 0 : incrementedIndex;
+  const incrementedIndex = index + 1
+  return incrementedIndex > length - 1 ? 0 : incrementedIndex
 }
 
 export default {
@@ -25,23 +25,31 @@ export default {
       required: true
     },
     position: {
-      type: String ,
+      type: String,
       required: true,
-      validator (value) {
-        return ['left', 'right', 'top', 'bottom', 'center'].includes
-          (value)
+      validator(value) {
+        return ['left', 'right', 'top', 'bottom', 'center'].includes(value)
       }
     }
   },
   data() {
-    return { selectedPartIndex: 0 };
+    return { selectedPartIndex: 0 }
   },
   computed: {
     selectedPart() {
-      return this.parts[this.selectedPartIndex];
+      return this.parts[this.selectedPartIndex]
     }
   },
+  created() {
+    this.emitSelectedPart()
+  },
+  updated() {
+    this.emitSelectedPart()
+  },
   methods: {
+    emitSelectedPart() {
+      this.$emit('partSelected', this.selectedPart)
+    },
     selectNextPart() {
       this.selectedPartIndex = getNextValidIndex(
         this.selectedPartIndex,
