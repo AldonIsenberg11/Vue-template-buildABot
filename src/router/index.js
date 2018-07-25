@@ -7,7 +7,7 @@ import PartInfo from '../parts/PartsInfo.vue'
 
 Vue.use(Router)
 
-export default new Router ({
+export default new Router({
   routes: [{
     path: '/',
     name: 'Home',
@@ -17,7 +17,7 @@ export default new Router ({
     name: 'Build',
     component: RobotBuilder
   }, {
-    path: '/parts',
+    path: '/parts/:partType/:id',
     name: 'Parts',
     component: PartInfo
   }]
