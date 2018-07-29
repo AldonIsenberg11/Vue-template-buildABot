@@ -15,6 +15,7 @@ import SidebarBuild from '../sidebars/SidebarBuild.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history', // HTML5 This removes hashtag in the address bar, but see https://router.vuejs.org/guide/essentials/history-mode.html
   routes: [{
     path: '/',
     name: 'Home',
