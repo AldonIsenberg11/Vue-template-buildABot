@@ -56,6 +56,11 @@ export default new Router({
   }, {
     path: '/parts/:partType/:id',
     name: 'Parts',
-    component: PartInfo
+    component: PartInfo,
+    props: true,
+    beforeEnter(to, from, next) { // This will prevent from navigating to a page if it is not valid
+      const isValidId = Number.isInteger(Number(to.params.id))
+      next(isValidId)
+    }
   }]
 })
