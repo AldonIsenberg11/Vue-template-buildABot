@@ -7,15 +7,16 @@
   </div>
 </template>
 
-<script>
-import parts from '../data/parts'
+<script type="text/javascript">
+import getPartsMixin from './getPartsMixin'
 
 export default {
   name: 'PartInfo',
+  mixins: [getPartsMixin],
   computed: {
     part() {
       const { partType, id } = this.$route.params
-      return parts[partType].find(part => part.id === +id)
+      return this.parts[partType].find(part => part.id === +id)
     }
   }
 }
