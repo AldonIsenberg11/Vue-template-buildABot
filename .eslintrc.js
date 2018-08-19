@@ -14,7 +14,8 @@ module.exports = {
     "semi"                 : ["error", "never"],
     "no-multi-spaces"      : "off",
     "no-param-reassign"    : 0,
-    "object-curly-spacing" : 0
+    "object-curly-spacing" : 0,
+    "key-spacing"          : "off"
 
   },
   parserOptions: {
