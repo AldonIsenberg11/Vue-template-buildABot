@@ -3,15 +3,15 @@ module.exports = {
   env: {
     node: true
   },
-  'extends': [
+  extends: [
     'plugin:vue/essential',
     '@vue/airbnb'
   ],
   rules: {
-    // 'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    "comma-dangle": ["error", "never"],
-    "semi": ["error", "never"]
+    'comma-dangle': ['error', 'never'],
+    semi: ['error', 'never']
 
   },
   parserOptions: {
